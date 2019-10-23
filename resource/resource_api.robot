@@ -53,11 +53,16 @@ Cadastrar um novo autor
     ${RESPOSTA}   Post Request    fakeAPI    Authors
     ...           data={"ID":19875,"IDBook":125477,"FirstName":"Sarah J.","LastName":"Maas"}
     ...           headers=${HEADERS}
-    Log To Console    ${RESPOSTA.status_code}
-    Log To Console    ${RESPOSTA.content}
-    Log To Console    ${RESPOSTA.reason}
+    Log To Console    Status code: ${RESPOSTA.status_code}
+    Log To Console    Itens inseridos: ${RESPOSTA.content}
+    Log To Console    Reason: ${RESPOSTA.reason}
 
-    # Dictionary Should Contain Item      ${RESPOSTA.json()}      ID              ${RESPOSTA.ID}
+
+    ${DADOS}=   Get From Dictionary    ${RESPOSTA.json()}  FirstName
+
+    Log To Console    ${DADOS}
+
+    # Dictionary Should Contain Item      ${RESPOSTA.json()}      ID              ${Resposta.data[1]}
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      IDBook          ${RESPOSTA.IDBook}
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      FirstName       ${RESPOSTA.FirstName}
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      LastName        ${RESPOSTA.LastName}
