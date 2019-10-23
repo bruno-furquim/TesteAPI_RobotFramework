@@ -61,9 +61,3 @@ Cadastrar um novo autor
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      IDBook          ${RESPOSTA.IDBook}
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      FirstName       ${RESPOSTA.FirstName}
     # Dictionary Should Contain Item      ${RESPOSTA.json()}      LastName        ${RESPOSTA.LastName}
-
-# Conferir se retorna todos os dados cadastrados para o novo autor
-#     Dictionary Should Contain Item      ${RESPOSTA.json()}      ID              ${RESPOSTA.ID}
-#     Dictionary Should Contain Item      ${RESPOSTA.json()}      IDBook          ${RESPOSTA.IDBook}
-#     Dictionary Should Contain Item      ${RESPOSTA.json()}      FirstName       ${RESPOSTA.FirstName}
-#     Dictionary Should Contain Item      ${RESPOSTA.json()}      LastName        ${RESPOSTA.LastName}
